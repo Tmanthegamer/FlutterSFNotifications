@@ -22,10 +22,10 @@ void main() => runApp( MaterialApp(home: HomePage()));
 
 class HomePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   
   NotificationService _service;
   static const platform = const MethodChannel('flutter.module.com/channelcommunication');
@@ -138,11 +138,11 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             RaisedButton(
               onPressed: () async { await _sendPlatformMessage("login"); },
-              child: const Text('Log in', style: TextStyle(fontSize: 20)),
+              child: const Text('Log in'),
             ),
             RaisedButton(
               onPressed: () async { await _sendPlatformMessage("logout"); },
-              child: const Text('Log Out', style: TextStyle(fontSize: 20)),
+              child: const Text('Log Out'),
             ),
             Text(
               '$_message',
