@@ -10,7 +10,9 @@ install:
   - ./flutter/bin/flutter doctor
   - pip install --user coverage
 script:
-  - ./scripts/runTests.sh
+  - ./scripts/runTests.sh --report
+after_success: 
+  - bash <(curl -s https://codecov.io/bash) -f lcov.info
 cache:
   directories:
     - $HOME/.pub-cache
