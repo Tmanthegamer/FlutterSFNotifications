@@ -39,9 +39,9 @@ runTests () {
     if grep flutter pubspec.yaml > /dev/null; then
       echo "run flutter tests"
       if [ -f "test/all_tests.dart" ]; then
-        flutter test --coverage test/all_tests.dart || error=true
+        ./flutter/bin/flutter test --coverage test/all_tests.dart || error=true
       else
-        flutter test --coverage || error=true
+        ./flutter/bin/flutter test --coverage || error=true
       fi
       if [ -d "coverage" ]; then
         # combine line coverage info from package tests to a common file
