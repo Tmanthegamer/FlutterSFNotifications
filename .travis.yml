@@ -6,10 +6,9 @@ addons:
 install:
   - git clone https://github.com/flutter/flutter.git -b stable
   - ./flutter/bin/flutter doctor
-  - pip install coverage
+  - pip install --user coverage
 script:
-  - ./flutter/bin/flutter test --coverage
-  - ./flutter/bin/flutter test --coverage
+  - ./scripts/runTests.sh
 cache:
   directories:
     - $HOME/.pub-cache
