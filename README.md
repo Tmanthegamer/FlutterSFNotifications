@@ -21,5 +21,10 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## Code Status
-- master [![Build Status](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications.svg?token=dyzcVRv9sq6xqiEsZffp&branch=master)](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications)
-- develop [![Build Status](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications.svg?token=dyzcVRv9sq6xqiEsZffp&branch=develop)](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications)
+### master
+[![Build Status](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications.svg?token=dyzcVRv9sq6xqiEsZffp&branch=master)](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications)
+[![codecov](https://codecov.io/gh/Tmanthegamer/FlutterSFNotifications/branch/master/graph/badge.svg?token=S1MJ2NY697)](https://codecov.io/gh/Tmanthegamer/FlutterSFNotifications)
+
+### develop
+[![Build Status](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications.svg?token=dyzcVRv9sq6xqiEsZffp&branch=develop)](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications)
+[![codecov](https://codecov.io/gh/Tmanthegamer/FlutterSFNotifications/branch/develop/graph/badge.svg?token=S1MJ2NY697)](https://codecov.io/gh/Tmanthegamer/FlutterSFNotifications)
