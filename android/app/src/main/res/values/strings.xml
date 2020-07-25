@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account_type">com.example.salesforce_notifications.login</string>
+	<string name="app_package">com.example.salesforce_notifications</string>
+    <string name="welcome">Welcome %s</string>
+	<string name="logout_button">Logout</string>
+	<string name="fetch_contacts_button">Fetch Contacts</string>
+	<string name="fetch_accounts_button">Fetch Accounts</string>
+	<string name="clear_button">Clear</string>
+	<string name="channel_name">SalesforceNotifications</string>
+	<string name="channel_description">Notifications received from Salesforce</string>
+	<string name="launch_flutter">Go go go</string>
+	<string name="engine_id">1</string>
+	<string name="login">Login</string>
+</resources>
