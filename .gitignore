@@ -1,3 +1,6 @@
+# App Screets and Keys
+android/app/src/main/res/values/bootconfig.xml
+
 # Miscellaneous
 *.class
 *.lock
