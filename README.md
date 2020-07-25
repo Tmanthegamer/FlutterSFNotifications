@@ -21,5 +21,5 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## Code Status
-master [![Build Status](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications.svg?token=dyzcVRv9sq6xqiEsZffp&branch=master)](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications)
-develop [![Build Status](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications.svg?token=dyzcVRv9sq6xqiEsZffp&branch=develop)](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications)
+- master [![Build Status](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications.svg?token=dyzcVRv9sq6xqiEsZffp&branch=master)](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications)
+- develop [![Build Status](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications.svg?token=dyzcVRv9sq6xqiEsZffp&branch=develop)](https://travis-ci.com/Tmanthegamer/FlutterSFNotifications)

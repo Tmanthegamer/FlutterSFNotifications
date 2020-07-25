@@ -15,7 +15,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   const String LOGIN_MESSAGE = "Logging in";
-  const String LOGOUT_MESSAGE = "Logging out";
+  const String LOGOUT_MESSAGE = "Logging out"; 
 
   List<MethodCall> logs = <MethodCall>[];
 
