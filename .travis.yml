@@ -3,11 +3,15 @@ dist: xenial
 addons:
   apt:
     packages:
+before_install:
+  - chmod +x scripts/runTests.sh
 install:
   - git clone https://github.com/flutter/flutter.git -b stable
   - ./flutter/bin/flutter doctor
 script:
-  - ./flutter/bin/flutter test --coverage
+  - ./scripts/runTests.sh --report
+after_success: 
+  - bash <(curl -s https://codecov.io/bash) -f lcov.info -t ${TOKEN}
 cache:
   directories:
     - $HOME/.pub-cache
