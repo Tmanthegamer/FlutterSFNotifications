@@ -8,11 +8,10 @@ before_install:
 install:
   - git clone https://github.com/flutter/flutter.git -b stable
   - ./flutter/bin/flutter doctor
-  - pip install --user coverage
 script:
   - ./scripts/runTests.sh --report
 after_success: 
-  - bash <(curl -s https://codecov.io/bash) -f lcov.info
+  - bash <(curl -s https://codecov.io/bash) -f lcov.info -t ${TOKEN}
 cache:
   directories:
     - $HOME/.pub-cache
