@@ -9,7 +9,7 @@ install:
   - git clone https://github.com/flutter/flutter.git -b stable
   - ./flutter/bin/flutter doctor
 script:
-  - ./scripts/runTests.sh --report
+  - ./scripts/runTests.sh
 after_success: 
   - bash <(curl -s https://codecov.io/bash) -f lcov.info -t ${TOKEN}
 cache:
