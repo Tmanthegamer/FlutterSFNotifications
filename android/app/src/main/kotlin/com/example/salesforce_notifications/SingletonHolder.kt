@@ -30,5 +30,5 @@ open class SingletonHolder<out T: Any, in A>(creator: (A) -> T) {
             }
         }
     }
-    class SingletonNotInitiatedException : Exception(message = "Singleton was not initialized before usage.") {}
+    class SingletonNotInitiatedException : Exception("Singleton was not initialized before usage.") {}
 }

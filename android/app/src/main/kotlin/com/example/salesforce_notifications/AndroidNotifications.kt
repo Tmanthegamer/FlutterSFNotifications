@@ -36,6 +36,6 @@ class AndroidNotifications : PushNotificationInterface {
     }
 
     override fun onPushMessageReceived(data: Map<String, String>) {
-        FlutterService.getInstance()!!.sendMessage(data)
+        MainActivity.instance.flutterService.sendMessage(data);
     }
 }

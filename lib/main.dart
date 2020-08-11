@@ -118,7 +118,7 @@ class HomePageState extends State<HomePage> {
       await _service.onNotificationSelect(payload);
     });
   }
-
+  
   @override
   void dispose() {
     didReceiveLocalNotificationSubject.close();

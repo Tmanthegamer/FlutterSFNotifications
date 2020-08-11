@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string name="remoteAccessConsumerKey">3MVG9Kip4IKAZQEUlxT5Uwd0es8rSuYEjSmArixp02mi7U0wABE8GhVCKUY9GJWGX_ZIjwZdQSpyfKQuZJhZ1</string>
+<!--
+    <string name="remoteAccessConsumerKey">{{Salesforce Access Key}}</string>
     <string name="oauthRedirectURI">{{Salesforce Oauth Redirect URI}}</string>
     <string-array name="oauthScopes">
         <item>api</item>
         <item>web</item>
     </string-array>
     <string name="androidPushNotificationClientId">{{Firebase Project Number}}</string>
+    -->
 </resources>

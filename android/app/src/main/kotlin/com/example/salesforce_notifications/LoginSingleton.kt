@@ -12,6 +12,8 @@ object LoginSingleton {
     }
 
     fun logout() {
-        SalesforceSDKManager.getInstance().logout(MainActivity.instance)
+        if(isLoggedIn()) {
+            SalesforceSDKManager.getInstance().logout(MainActivity.instance)
+        }
     }
 }

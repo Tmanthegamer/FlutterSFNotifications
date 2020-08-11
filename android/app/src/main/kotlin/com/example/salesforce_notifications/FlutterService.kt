@@ -6,9 +6,8 @@ import com.salesforce.androidsdk.app.SalesforceSDKManager
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
-class FlutterService private constructor(private var messagingChannel: MethodChannel) : MethodChannel.MethodCallHandler {
-
-    companion object : SingletonHolder<FlutterService, MethodChannel>(::FlutterService)
+class FlutterService constructor(val messagingChannel: MethodChannel) : MethodChannel.MethodCallHandler {
+    var initialized : Boolean = false
 
     init {
         messagingChannel.setMethodCallHandler(this)
@@ -25,7 +24,7 @@ class FlutterService private constructor(private var messagingChannel: MethodCha
         try {
             if(call.method == "login") {
                 if(!LoginSingleton.isLoggedIn()) {
-                    val loginIntent = Intent(MainActivity.getContext(), MainActivity::class.java)
+                    val loginIntent = Intent(MainActivity.getContext(), SalesforceLoginActivity::class.java)
                     loginIntent.addCategory(Intent.CATEGORY_DEFAULT)
                     MainActivity.getContext().startActivity(loginIntent)
                     success = "Rerouting to Salesforce Login"

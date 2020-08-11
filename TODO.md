@@ -27,13 +27,14 @@ A file to keep track of tasks and knowledge learned pertaining to this project
 ## Flutter Application
 
 ### Flutter Items In Progress
-- catch the notification tap and redirect using the url given by the server
 
 ### Flutter TODO
 - Start designing the architecture of what's required (e.g. server, salesforce, etc.)
 - Think about iOS development and what that means in terms of flutter
 
 ### Completed Flutter Items
+- catch the notification tap and redirect using the url given by the server
+- Flutter tests and github builds on each commit
 - Unique Notification Id using dart
 - Try to import Salesforce libraries into a new project and use flutter_module as a base
 - Flutter application initializes with Android's Salesforce login but redirects to Flutter screen

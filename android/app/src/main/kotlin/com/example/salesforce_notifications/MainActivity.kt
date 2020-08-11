@@ -1,17 +1,17 @@
 package com.example.salesforce_notifications
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.NonNull
+import com.salesforce.androidsdk.mobilesync.app.MobileSyncSDKManager
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
-import com.salesforce.androidsdk.mobilesync.app.MobileSyncSDKManager
 
 class MainActivity: FlutterActivity() {
 
   private val FEATURE_APP_USES_KOTLIN = "KT"
+  lateinit var flutterService : FlutterService
 
   companion object {
     private val NOTIFICATION_CHANNEL = "flutter.module.com/channelcommunication"
@@ -37,9 +37,11 @@ class MainActivity: FlutterActivity() {
     // Initialize static members
     instance = this
     theContext = applicationContext
-    
+
+
     // Initialize the Flutter Service for platform messages
-    FlutterService.getInstance(MethodChannel(flutterEngine.dartExecutor.binaryMessenger, NOTIFICATION_CHANNEL))
+    val channel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, NOTIFICATION_CHANNEL)
+    this.flutterService = FlutterService(channel)
 
     MobileSyncSDKManager.initNative(applicationContext, MainActivity::class.java)
     MobileSyncSDKManager.getInstance().registerUsedAppFeature(FEATURE_APP_USES_KOTLIN)

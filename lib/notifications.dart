@@ -84,21 +84,28 @@ class NotificationService {
     String url;
     String notificationId;
     String title = 'Generic title';
+    Map<String, dynamic> arguments = null;
+    try {
+      arguments = call.arguments.cast<String,dynamic>();
 
-    if(call.arguments['title'] != null)   { title   = call.arguments['title']; }
-    if(call.arguments['body'] != null)    { body    = call.arguments['body']; }
-    if(call.arguments['url'] != null)     { url     = call.arguments['url']; }
-    if(call.arguments['payload'] != null) { payload = call.arguments['payload']; }
+      if(arguments.containsKey('title'))   { title   = arguments['title']; }
+      if(arguments.containsKey('body'))    { body    = arguments['body']; }
+      if(arguments.containsKey('url'))     { url     = arguments['url']; }
+      if(arguments.containsKey('payload')) { payload = arguments['payload']; }
 
-    notificationId = call.arguments['notificationId'] != null ? call.arguments['notificationId'] : this.uniqueId;
-    if(payload == null && url.isNotEmpty) { payload = url; }
+      notificationId = arguments.containsKey('notificationId') ? arguments['notificationId'] : this.uniqueId.toString();
+      if(payload == null && url.isNotEmpty) { payload = url; }
+      
+      var notification = ReceivedNotification(id: int.parse(notificationId), title: title, body: body, payload: payload, url: url);
+
+      switch(call.method) {
+        case 'SalesforceNotifications':
+          await showNotification(notification);
+          break;
+      }
     
-    var notification = ReceivedNotification(id: int.parse(notificationId), title: title, body: body, payload: payload, url: url);
-
-    switch(call.method) {
-      case 'SalesforceNotifications':
-        await showNotification(notification);
-        break;
+    } catch(ex) {
+      print(ex.toString());
     }
   }
 

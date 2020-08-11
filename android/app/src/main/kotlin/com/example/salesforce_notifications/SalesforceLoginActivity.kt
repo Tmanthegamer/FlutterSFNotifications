@@ -51,23 +51,15 @@ import java.util.*
  */
 class SalesforceLoginActivity : SalesforceActivity() {
 
-    private var client: RestClient? = null
-        get() = LoginSingleton.client
-
     private var listAdapter: ArrayAdapter<String>? = null
-
-    private fun setClient(client: RestClient) {
-        LoginSingleton.client = client
-        this.client = client
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Set Theme
-        val idDarkTheme = MobileSyncSDKManager.getInstance().isDarkTheme()
-        setTheme(if (idDarkTheme) R.style.SalesforceSDK_Dark else R.style.SalesforceSDK)
-        MobileSyncSDKManager.getInstance().setViewNavigationVisibility(this)
+//        val idDarkTheme = MobileSyncSDKManager.getInstance().isDarkTheme()
+//        setTheme(if (idDarkTheme) R.style.SalesforceSDK_Dark else R.style.SalesforceSDK)
+//        MobileSyncSDKManager.getInstance().setViewNavigationVisibility(this)
 
         // Setup view
         setContentView(R.layout.login_main)
@@ -86,7 +78,7 @@ class SalesforceLoginActivity : SalesforceActivity() {
 
     override fun onResume(client: RestClient) {
         // Keeping reference to rest client
-        setClient(client)
+        LoginSingleton.client = client
 
         // Show everything
         //findViewById<ViewGroup>(R.id.root).visibility = View.VISIBLE
@@ -145,7 +137,7 @@ class SalesforceLoginActivity : SalesforceActivity() {
     private fun sendRequest(soql: String) {
         val restRequest = RestRequest.getRequestForQuery(ApiVersionStrings.getVersionNumber(this), soql)
 
-        client!!.sendAsync(restRequest, object : AsyncRequestCallback {
+        LoginSingleton.client!!.sendAsync(restRequest, object : AsyncRequestCallback {
             override fun onSuccess(request: RestRequest, result: RestResponse) {
                 result.consumeQuietly() // consume before going back to main thread
                 runOnUiThread {
